@@ -8,5 +8,3 @@ for (let i = m; i <= n; i++) {
         result *= i;
     }
 }
-
-console.log(result);
