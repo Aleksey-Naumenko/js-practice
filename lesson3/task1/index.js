@@ -10,8 +10,8 @@ console.log("+'77': ", +'77');
 10 + '5';
 'some' + 'text';
 
-console.log(10 + '5');
-console.log('some' + 'text');
+console.log("10 + '5': ", 10 + '5');
+console.log("'some' + 'text': ", 'some' + 'text');
 
 
 // Математические операции с undefined возвращают NaN
@@ -38,10 +38,10 @@ let num = 17;
 
 // Постфиксная и префиксная форма записи
 ++num;
-console.log('++num: ', ++num);
+console.log('++num: ', num);
 
 num++;
-console.log('num++: ', num++);
+console.log('num++: ', num);
 
 
 
@@ -54,7 +54,7 @@ const b = -a;
 console.log("'24' / 4: ", '24' / 4);
 
 18 * '3';
-console.log('+17: ', +17);
+console.log("18 * '3': ", 18 * '3');
 
 '9' - '3';
 console.log("'9' - '3': ", '9' - '3');
@@ -63,7 +63,7 @@ console.log("'9' - '3': ", '9' - '3');
 console.log("'seventeen' / 3: ", 'seventeen' / 3);
 
 4 * 'four';
-console.log("4 * 'four': ",);
+console.log("4 * 'four': ", 4 * 'four');
 
 17 / 0;
 console.log('17 / 0: ', 17 / 0);
