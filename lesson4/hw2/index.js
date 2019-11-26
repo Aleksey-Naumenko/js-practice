@@ -1,5 +1,5 @@
-const m = 2;
-const n = 22;
+const m = 10;
+const n = 20;
 
 let result = 0;
 
