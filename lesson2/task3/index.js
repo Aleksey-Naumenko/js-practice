@@ -1,6 +1,6 @@
-const goodNumber = 17;
-const anotherNumber = goodNumber;
-const anotherNumber = 77;
+let goodNumber = 17;
+let anotherNumber = goodNumber;
+let anotherNumber = 77;
 console.log(goodNumber);
 console.log(anotherNumber);
 const customer = {
