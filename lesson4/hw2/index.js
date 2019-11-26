@@ -17,5 +17,3 @@ for (let i = m; i <= n; i++) {
         console.log(i);
     }
 }
-
-console.log(result);
