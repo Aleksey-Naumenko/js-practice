@@ -1,5 +1,5 @@
 const m = 40;
-const n = 51;
+const n = 50;
 
 let result = 1;
 
