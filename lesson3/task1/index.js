@@ -40,8 +40,8 @@ let num = 17;
 ++num;
 console.log('++num: ', num);
 
-num++;
-console.log('num++: ', num);
+let q = num++;
+console.log('num++: ', q);
 
 
 
