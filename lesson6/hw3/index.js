@@ -1,12 +1,25 @@
 function sortAsc(array) {
-    let sortedArr = array.sort((a, b) => a - b);
-    return sortedArr;
+    for (let i = 0; i < array.length; i++) {
+        for (let q = 0; q < array.length; q++) {
+            if (array[i] < array[q]) {
+                let current = array[i];
+                array[i] = array[q];
+                array[q] = current;
+            } 
+        }
+       }   
+    return array;
 }
 
 function sortDesc(array) {
-    let sortedArr = array.sort((a, b) => b - a);
-    return sortedArr;
+    for (let i = 0; i < array.length; i++) {
+        for (let q = 0; q < array.length; q++) {
+            if (array[i] > array[q]) {
+                let current = array[i];
+                array[i] = array[q];
+                array[q] = current;
+            } 
+        }
+       }   
+    return array;
 }
-
-
-console.log(sortDesc([2, 5, 3, 8, 1, 4, 17, 11, 10]));
