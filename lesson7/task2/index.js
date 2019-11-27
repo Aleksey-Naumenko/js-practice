@@ -1,3 +1,3 @@
 function sortDesc(arr) {
-    return arr.slice().sort((a, b) => a - b);
+    return arr.slice().sort((a, b) => b - a);
 }
