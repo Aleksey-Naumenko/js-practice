@@ -1,9 +1,11 @@
-function getPrimes(num) {
-    for (let i = 1; i <= num; i++) {
-        if (i % 1 === 0 && i % i === 0) {
-            console.log(i);
+function getPrimes(n) {
+   
+    reset:
+    for (let i = 2; i <= n; i++) {
+
+        for (let j = 2; j < i; j++) {
+             if (i % j == 0) continue reset;
         }
+        console.log(i);
     }
 }
-
-getPrimes(100);
