@@ -6,8 +6,10 @@ function squareArray(arr) {
     }
 
     for (let i = 0; i < arr.length; i++) {
-        squaredArr.push(arr[i] * 2);
+        squaredArr.push(arr[i] * arr[i]);
     }
 
     return squaredArr;
 }
+
+console.log(squareArray([2, 3, 4, 5]));
