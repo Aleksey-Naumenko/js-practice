@@ -1,3 +1,3 @@
 function increaser(a, index) {
-    a > index ? a * index : a;
+    return a > index ? a * index : a;
 }
