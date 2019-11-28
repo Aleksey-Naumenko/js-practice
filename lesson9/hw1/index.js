@@ -7,9 +7,10 @@ function getCustomersList(obj) {
             item.splice(0, 1);
         });
 
-    let arrayOfObjects = arrayOfArrays.reduce((acc, elem) => {
-        return acc.concat(elem);
-        }, [])
+    let arrayOfObjects = arrayOfArrays
+        .reduce((acc, elem) => {
+            return acc.concat(elem);
+            }, [])
         .sort((person, nextPerson) => person.age - nextPerson.age);
 
     return arrayOfObjects;
