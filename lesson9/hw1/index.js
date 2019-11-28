@@ -6,9 +6,26 @@ function getCustomersList(obj) {
         item.splice(0, 1);
     });
 
-    console.log(myObj)
-
-    let sortedByAge = myObj.sort((person, nextPerson) => person[0].age - nextPerson[0].age);
+    let sortedByAge = myObj.sort((person, nextPerson) => person.age - nextPerson.age);
     
     return sortedByAge;
 }
+
+console.log(getCustomersList( {
+    'customer-id-1': {
+        name: 'William',
+        age: 54
+    },
+    'customer-id-2': {
+        name: 'Tom',
+        age: 17
+    },
+    'customer-id-3': {
+        name: 'Bob',
+        age: 30
+    },
+    'customer-id-4': {
+        name: 'David',
+        age: 44
+    },
+}));
