@@ -1,32 +1,13 @@
 function getCustomersList(obj) {
-    
-    for (let key in obj) {
-        obj[key].id = 'hello';
+    let myObj = {...obj};
+
+    for (let key in myObj) {
+        myObj[key].id = key;
     }
 
-    let sortedObj = Object.values(obj);
-    // console.log(sortedObj);
+    let objToArray = Object.values(myObj);
 
-    let sortedByAge = sortedObj.sort((person, secondPerson) => person.age - secondPerson.age);
+    let sortedByAge = objToArray.sort((person, secondPerson) => person.age - secondPerson.age);
+    
     return sortedByAge;
-    // console.log(sortedByAge);
 }
-
-// console.log(getCustomersList( {
-//     'customer-id-1': {
-//         name: 'William',
-//         age: 54
-//     },
-//     'customer-id-2': {
-//         name: 'Tom',
-//         age: 17
-//     },
-//     'customer-id-3': {
-//         name: 'Bob',
-//         age: 30
-//     },
-//     'customer-id-4': {
-//         name: 'David',
-//         age: 44
-//     },
-// }));
