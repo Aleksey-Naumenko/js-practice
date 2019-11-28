@@ -1,5 +1,5 @@
 function getCustomersList(obj) {
-    let myObj = Object.assign({}, obj);
+    let { myObj } = obj;
 
     for (let key in myObj) {
         myObj[key].id = key;
