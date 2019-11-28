@@ -1,13 +1,14 @@
 function getCustomersList(obj) {
-    let myObj = { ...obj };
+    let myObj = Object.entries(obj);
 
-    for (let key in myObj) {
-        myObj[key].id = key;
-    }
+    myObj.map(function(item) {
+        item[1].id = item[0];
+        item.splice(0, 1);
+    });
 
-    let objToArray = Object.values(myObj);
+    console.log(myObj)
 
-    let sortedByAge = objToArray.sort((person, secondPerson) => person.age - secondPerson.age);
+    let sortedByAge = myObj.sort((person, nextPerson) => person[0].age - nextPerson[0].age);
     
     return sortedByAge;
 }
