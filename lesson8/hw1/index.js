@@ -4,7 +4,7 @@ function pickProps(obj, props) {
     props.map(item => {
         for (let key in obj) {
             if (key == item) {
-            filteredObj[item] = item;
+            filteredObj[key] = obj[key];
             }
         }
     });
