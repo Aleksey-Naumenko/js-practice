@@ -2,11 +2,14 @@ function getRandomNumbers(length, min, max) {
     let arrayOfNumbs = [];
 
     if (Number.isInteger(min, max) && max > min) {
-        for (let i = 1; i <= length; i++) {
+        
+        do {
             arrayOfNumbs.push(Math.floor(Math.random() * (max - min) + min));
-        } 
+        } while (arrayOfNumbs.length < length);
+        
     } else {
         return null;
     }
+
     return arrayOfNumbs;
 }
