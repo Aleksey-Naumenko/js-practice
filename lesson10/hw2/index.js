@@ -3,8 +3,8 @@ function getRandomNumbers(length, min, max) {
     
     if (max < min || max - min < 0) return null;
         
-    Math.floor(min);
-    Math.floor(max);
+    let min = Math.floor(min);
+    let max = Math.floor(max);
 
     do {
         arrayOfNumbs.push(Math.floor(Math.random() * (max - min) + min));
