@@ -14,5 +14,3 @@ function getRandomNumbers(length, start, end) {
     }
     return arrayOfNumbs;
 }
-
-console.log(getRandomNumbers(4, -100, 50));
