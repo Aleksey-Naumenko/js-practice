@@ -1,17 +1,8 @@
 function getCustomersList(obj) {
     
-    let arrayOfArrays =  Object.entries(obj);
-
-    arrayOfArrays.map(function(item) {
-            item[1].id = item[0];
-            item.splice(0, 1);
-        });
-
-    let arrayOfObjects = arrayOfArrays
-        .reduce((acc, elem) => {
-            return acc.concat(elem);
-            }, [])
-        .sort((person, nextPerson) => person.age - nextPerson.age);
+    let arrayOfObjects =  Object.entries(obj)
+        .sort((person, nextPerson) => person[1].age - nextPerson[1].age)
+        .map(item => item = { ...item[1], id:item[0] });
 
     return arrayOfObjects;
 }
