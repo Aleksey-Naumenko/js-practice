@@ -1,9 +1,13 @@
 function getFiniteNumbers(arr) {
-    return arr.map(item => Number.isFinite(item));
+    let finiteNumbs = [];
+    arr.map(item => finiteNumbs.push( Number.isFinite(item)) );
+    return finiteNumbs;
 }
 
 function getFiniteNumbersV2(arr) {
-    return arr.map(item => isFinite(item));
+    let finiteNumbs = [];
+    arr.map(item => finiteNumbs.push( isFinite(item)) );
+    return finiteNumbs;
 }
 
 function getNaN(arr) {
