@@ -6,18 +6,24 @@ function getFiniteNumbers(arr) {
 
 function getFiniteNumbersV2(arr) {
     let finiteNumbs = [];
-    arr.map(item => Number.isFinite(item) ? finiteNumbs.push(item) : false);
+    arr.map(item => isFinite(item) ? finiteNumbs.push(item) : false);
     return finiteNumbs;
 }
 
 function getNaN(arr) {
-    return arr.map(item => Number.isNaN(item));
+    let nanNumbs = [];
+    arr.map(item => Number.isNaN(item) ? nanNumbs.push(item) : false);
+    return nanNumbs;
 }
 
 function getNaNV2(arr) {
-    return arr.map(item => isNaN(item));
+    let nanNumbs = [];
+    arr.map(item => isNaN(item) ? nanNumbs.push(item) : false);
+    return nanNumbs;
 }
 
 function getIntegers(arr) {
-    return arr.map(item => Number.isInteger(item));
+    let intNUmbs = [];
+    arr.map(item => Number.isInteger(item) ? intNUmbs.push(item) : false);
+    return intNUmbs;
 }
