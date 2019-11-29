@@ -1,23 +1,15 @@
 function getParsedIntegers(arr) {
-    let parsedInt = [];
-    arr.map(item => Number.parseInt(item) ? parsedInt.push(item) : false);
-    return parsedInt;
+    return arr.map(item => Number.parseInt(item));
 }
 
 function getParsedIntegersV2(arr) {
-    let parsedInt = [];
-    arr.map(item => parseInt(item) ? parsedInt.push(item) : false);
-    return parsedInt;
+    return arr.map(item => parseInt(item));
 }
 
 function getParsedFloats(arr) {
-    let floatedNumbs = [];
-    arr.map(item => Number.parseFloat(item) ? floatedNumbs.push(item) : false);
-    return floatedNumbs;
+    return arr.map(item => Number.parseFloat(item));
 }
 
 function getParsedFloatsV2(arr) {
-    let floatedNumbs = [];
-    arr.map(item => parseFloat(item) ? floatedNumbs.push(item) : false);
-    return floatedNumbs;
+    return arr.map(item => parseFloat(item));
 }
