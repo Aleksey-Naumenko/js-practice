@@ -1,12 +1,12 @@
 function getFiniteNumbers(arr) {
     let finiteNumbs = [];
-    arr.map(item => finiteNumbs.push( Number.isFinite(item)) );
+    arr.map(item => Number.isFinite(item) ? finiteNumbs.push(item) : false);
     return finiteNumbs;
 }
 
 function getFiniteNumbersV2(arr) {
     let finiteNumbs = [];
-    arr.map(item => finiteNumbs.push( isFinite(item)) );
+    arr.map(item => Number.isFinite(item) ? finiteNumbs.push(item) : false);
     return finiteNumbs;
 }
 
