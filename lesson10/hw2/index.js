@@ -1,7 +1,7 @@
 function getRandomNumbers(length, min, max) {
     let arrayOfNumbs = [];
 
-    if (max > min && max - min == 0) {
+    if (max > min && max - min > 0) {
         Math.floor(min);
         Math.floor(max);
 
