@@ -9,4 +9,4 @@ function countOccurrences(str, substr) {
 }
 
 
-// console.log(countOccurrences('asd aseasdwqeq asd 13fsdff asd asdfwqe3', ''));
+console.log(countOccurrences('asd aseasdwqeq asd 13fsdff asd asdfwqe3', ''));

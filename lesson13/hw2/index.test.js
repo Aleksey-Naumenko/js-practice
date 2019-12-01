@@ -1,4 +1,4 @@
-import { calc } from './calc';
+import { calc } from './index';
 
 it ('should get sum of numbers', () => {
     const result = calc('2 + 2');
