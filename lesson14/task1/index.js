@@ -1,10 +1,11 @@
 let message = 'Hello';
 
-function sendMessage(name) {
-    console.log(`${name}, ${message}! Your Gromcode`);
+export function sendMessage(name) {
+    let sender = 'Gromcode';
+    console.log(`${name}, ${message}! Your ${sender}`);
 }
 
-function setMessage(newText) {
+export function setMessage(newText) {
     message = newText;
 }
 
