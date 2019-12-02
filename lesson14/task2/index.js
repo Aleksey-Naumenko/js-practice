@@ -1,6 +1,6 @@
 'use strict';
 
-export default createMessenger = () => {
+export default () => {
     let sender = 'Gromcode';
     let message = 'Hello';
 
