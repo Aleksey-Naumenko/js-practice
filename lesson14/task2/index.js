@@ -9,12 +9,12 @@ export default () => {
     }
 
     function setMessage(text) {
-        text.style.fontWeight = 'bold';
+        // text.style.fontWeight = 'bold';
         message = text; // .bold();
     }
 
     function setSender(newSender) {
-        newSender.style.fontWeight = 'bold';
+        // newSender.style.fontWeight = 'bold';
         sender = newSender; //.bold();
     }
 
