@@ -1,18 +1,20 @@
-// 'use strict';
+'use strict';
 export default () => {
-    let sender = 'Gromecode';
+    let sender = 'Gromcode';
     let message = 'Hello';
 
     function sendMessage(name) {
-        console.log(`${name}, ${message} Your ${sender}`);
+        console.log(`${name}, ${message}! Your ${sender}`);
     }
 
     function setMessage(text) {
-        message = text.bold();
+        text.style.fontWeight = 'bold';
+        message = text; // .bold();
     }
 
     function setSender(newSender) {
-        sender = newSender.bold();
+        newSender.style.fontWeight = 'bold';
+        sender = newSender; //.bold();
     }
 
     return {
