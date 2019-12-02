@@ -1,10 +1,13 @@
 'use strict';
-export default () => {
+
+export default createMessenger;
+
+const createMessenger = () => {
     let sender = 'Gromcode';
     let message = 'Hello';
 
     function sendMessage(name) {
-        console.log(`${name}, ${message}! Your ${sender}`);
+        console.log(`${name}, ${message}. Your ${sender}`);
     }
 
     function setMessage(text) {
