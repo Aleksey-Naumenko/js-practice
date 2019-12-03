@@ -1,5 +1,5 @@
 export function createArrayOfFunctions(len) {
-    if (typeof len !== 'number') {
+    if (Number.isFinite(len)) {
         return null;
     }
 
