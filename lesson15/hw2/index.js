@@ -1,55 +1,41 @@
 export function createLogger() {
-    let warnData = {};
-    let errorData = {}; 
-    let logData = {};
-    // let date = new Date();
-
-
+    let data = [];
+    
     function warn(string) {
-        let date = new Date();
-
-        return warnData = {
+        return data.push(
+            {
             message: string,
-            dateTime: `${date.getHours()}:${date.getMinutes()}`,
+            dateTime: new Date(),
             type: 'warn',
-        };
+            });
     }
 
     function error(string) {
-        let date = new Date();
-
-        return errorData = {
+        return data.push(
+            {
             message: string,
-            dateTime: `${date.getHours()}:${date.getMinutes()}`,
+            dateTime: new Date(),
             type: 'error',
-        };
+            });
     }
 
     function log(string) {
-        let date = new Date();
-
-        return logData = {
+        return data.push(
+            {
             message: string,
-            dateTime: `${date.getHours()}:${date.getMinutes()}`,
+            dateTime: new Date(),
             type: 'log',
-        };
+            });
     }
 
     function getRecords(str) {
+        
+        return !str ? data : data
+            .filter(item => item.type === str)
+            .sort((a, b) => b.dateTime.getDate() - a.dateTime.getDate());
 
-        switch (str) {
-            case 'warn':
-                return warnData;
-            case 'error':
-                return errorData;
-            case 'log':
-                return logData;
-            case str: 
-                return [warnData, errorData, logData]
-                    .sort((a, b) => a.dateTime - b.dateTime);
-            // default: 
-        }
     }
+
     return {
         warn,
         error,
