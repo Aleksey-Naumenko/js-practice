@@ -43,9 +43,3 @@ export function createLogger() {
         getRecords,
     }
 }
-
-// let loger = createLogger();
-// // loger.warn('Be careful');
-// loger.error('We got error here');
-// // loger.log('No more chance');
-// console.log(loger.getRecords('error'));
