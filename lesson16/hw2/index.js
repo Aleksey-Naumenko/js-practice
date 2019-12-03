@@ -1,4 +1,4 @@
-let foo = 1; 
+export default foo = 1; 
 
 function bar() { 
     if (!foo) { 
@@ -8,4 +8,4 @@ function bar() {
     return foo;
 }
 
-foo = bar();
+var foo = bar();
