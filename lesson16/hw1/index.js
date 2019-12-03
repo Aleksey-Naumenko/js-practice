@@ -1,4 +1,4 @@
-function createArrayOfFunctions(len) {
+export function createArrayOfFunctions(len) {
     if (typeof len !== 'number') {
         return null;
     }
