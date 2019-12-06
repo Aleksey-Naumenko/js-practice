@@ -1,3 +1,9 @@
 export function getOwnProps(obj) {
-    return Object.keys(obj);
+    let arrOfProps = [];
+    for (let prop in obj) {
+        if (typeof obj[prop] !== 'function') {
+            arrOfProps.push(prop);
+        }
+    }
+    return arrOfProps;
 }
