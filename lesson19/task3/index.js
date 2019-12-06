@@ -1,6 +1,6 @@
 const user = {
-    firstName  = 'John',
-    lastName = 'Doe',
+    firstName: 'John',
+    lastName: 'Doe',
 
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
@@ -10,7 +10,7 @@ const user = {
         let [firstName, lastName] = nameOfUser.split(' ');
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-}
+    },
+};
 
 export default { user };
