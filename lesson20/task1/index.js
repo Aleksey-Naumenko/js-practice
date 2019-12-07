@@ -5,8 +5,7 @@ export class User {
     };
 
     static createEmpty() {
-        let newUser = new User();
-        return newUser;
+        return new User('John', 25);
     }
 
     sayHi() {
