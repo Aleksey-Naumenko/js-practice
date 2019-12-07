@@ -5,7 +5,7 @@ export class User {
     };
 
     static createEmpty() {
-        return new User(null, null);
+        return new User('John', 25);
     }
 
     sayHi() {
@@ -19,7 +19,7 @@ export class User {
     setAge(age) {
         if (age < 0) return false;
         if (age >= 25) {
-            requestNewPhoto();
+            this.requestNewPhoto();
         };
         this.age = age;
         return age;
