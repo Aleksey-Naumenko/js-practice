@@ -1,7 +1,6 @@
 export function User(name, age) {
-    this.name = name;
+    this.name = 'John';
     this.age = age;
-
 }
 
 User.prototype.sayHi = function() {
