@@ -1,7 +1,5 @@
 export class Wallet {
-    constructor() {
-        this.balance = 0;
-    }
+        balance = 0;
     getBalance() {
         return this.balance;
     }
@@ -9,7 +7,7 @@ export class Wallet {
         return this.balance += depo;
     }
     withdraw(withdr) {
-        if (this.balance > withdr) {
+        if (this.balance < withdr) {
             console.log('No enough funds');
             return;
         }
