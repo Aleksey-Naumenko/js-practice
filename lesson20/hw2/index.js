@@ -4,13 +4,13 @@ export class User {
         this._name = name;
         this._sessionId = sessionId;
     }
-    get userId() {
+    get id() {
         return this._id;
     }
-    get userName() {
+    get name() {
         return this._name;
     }
-    get usersessionId() {
+    get sessionId() {
         return this._sessionId;
     }
 }
@@ -19,19 +19,19 @@ export class UserRepository {
     constructor(users) {
         this._users = Object.freeze(users);
     }
-    get usersArr() {
+    get users() {
         return this._users;
     }
     getUserNames() {
-        return this.usersArr.map(item => item.userName);
+        return this.users.map(item => item.name);
     }
     getUserIds() {
-        return this.usersArr.map(item => item.userId);
+        return this.users.map(item => item.id);
     }
     getUserNameById(id) {
-        return this.usersArr
-            .filter(item => item.userId === id)
-            .map(item => item.userName);
+        return this.users
+            .filter(item => item.id === id)
+            .map(item => item.name);
     } 
 }
 
