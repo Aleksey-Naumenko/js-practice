@@ -29,8 +29,9 @@ export class UserRepository {
         return this.usersArr.map(item => item.userId);
     }
     getUserNameById(id) {
-        let filteredArr = this.usersArr
-            .filter(item => item.userId === id ? item.userName : false);
+        return this.usersArr
+            .filter(item => item.userId === id)
+            .map(item => item.userName);
     } 
 }
 
