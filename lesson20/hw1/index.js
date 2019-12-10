@@ -8,8 +8,8 @@ export class Order {
         this.city = city;
         this.type = type;
     }
-    checkPrice(price) {
-        return price > 1000;
+    checkPrice() {
+        return this.price > 1000;
     }
     confirmOrder() {
         if (this.isConfirmed == false) {
@@ -18,9 +18,9 @@ export class Order {
         this.dateConfirmed = new Date();
     }
     isValidType() {
-        if (this.type !== 'Buy' || this.type !== 'Sell') {
-            return false;
+        if (this.type == 'Buy' || this.type == 'Sell') {
+            return true;
         }
-        return true;
+        return false;
     }
 }
