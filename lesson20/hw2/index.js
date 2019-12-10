@@ -29,8 +29,10 @@ export class UserRepository {
         return this.users.map(item => item.id);
     }
     getUserNameById(id) {
-        return this.users
-			.find(item => item.id === id)
- 			.name;
+        let targetUser =  this.users.find(item => item.id === id);
+        if (!targetUser) {
+            return 'There is no such user with this Id!';
+        }
+        return targetUser.name;   
     }
 }
