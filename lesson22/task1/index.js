@@ -20,13 +20,13 @@ const logGreyDiv = logTarget.bind(null, 'DIV', 'grey');
 const logGreyP = logTarget.bind(null, 'P', 'grey');
 const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
-// divRect.addEventListener('click', logGreyDiv, true);
-// pRect.addEventListener('click', logGreyP, true);
-// spanRect.addEventListener('click', logGreySpan, true);
+divRect.addEventListener('click', logGreyDiv, true);
+pRect.addEventListener('click', logGreyP, true);
+spanRect.addEventListener('click', logGreySpan, true);
 
-// divRect.addEventListener('click', logGreenDiv);
-// pRect.addEventListener('click', logGreenP);
-// spanRect.addEventListener('click', logGreenSpan);
+divRect.addEventListener('click', logGreenDiv);
+pRect.addEventListener('click', logGreenP);
+spanRect.addEventListener('click', logGreenSpan);
 
 clearBtn.addEventListener('click', () => {
     textField.innerHTML = ``;
