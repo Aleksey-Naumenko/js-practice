@@ -47,7 +47,7 @@ const updateTasksList = event => {
         if (!isCheckbox) {
             return;
         }
-        console.log(tasks.map(item => item.id));
+        // console.log(tasks.map(item => item.id));
         const taskData = tasks.find(task => task.id == event.target.dataset.id);
         Object.assign(taskData, { done: event.target.checked });
         renderListItems(tasks);
