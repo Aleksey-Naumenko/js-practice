@@ -1,8 +1,8 @@
 export const getDiff = (startDate, endDate) => {
     let timeStamp = Math.abs(endDate - startDate);
 
-    let permRest;
-    let diff = [];
+    let tempRest;
+    let differ = [];
     
     const standarts = {
         day: 24 * 60 * 60 * 1000,
@@ -12,10 +12,10 @@ export const getDiff = (startDate, endDate) => {
     }
 
     for (let key in standarts) {
-        permRest = timeStamp % standarts[key];
-        diff.push( Math.floor(timeStamp / standarts[key]) );
-        timeStamp = permRest;
+        tempRest = timeStamp % standarts[key];
+        differ.push( Math.floor(timeStamp / standarts[key]) );
+        timeStamp = tempRest;
     }
 
-    return `${diff[0]}d ${diff[1]}h ${diff[2]}m ${diff[3]}s`;
+    return `${differ[0]}d ${differ[1]}h ${differ[2]}m ${differ[3]}s`;
 }
