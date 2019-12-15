@@ -5,3 +5,4 @@ const formatter = new Intl.DateTimeFormat('en', {
     hour12: false,
 });
 
+export const getGreenwitchTime = date => formatter.format(date);
