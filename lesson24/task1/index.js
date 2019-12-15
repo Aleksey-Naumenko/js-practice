@@ -5,4 +5,4 @@ export const dayOfWeek = (date, days) => {
     return weekDays[new Date(futureDate).getDay()];
 }
 
-const weekDays = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'St', 'Su'];
+const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'St'];
