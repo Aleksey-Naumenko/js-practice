@@ -1,5 +1,5 @@
 export const getDiff = (startDate, endDate) => {
-    let timeStamp = endDate - startDate;
+    let timeStamp = Math.abs(endDate - startDate);
 
     let permRest;
     let diff = [];
@@ -13,7 +13,7 @@ export const getDiff = (startDate, endDate) => {
 
     for (let key in standarts) {
         permRest = timeStamp % standarts[key];
-        diff.push( Math.abs(Math.floor(timeStamp / standarts[key])) );
+        diff.push( Math.floor(timeStamp / standarts[key]) );
         timeStamp = permRest;
     }
 
