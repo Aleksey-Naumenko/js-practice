@@ -1,12 +1,11 @@
 export function studentsBirthDays(students) {
-    const monthes = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
     let final = {};
-    let q = Object.assign({}, students);
 
     students.forEach(student => {
         let studentMonth = new Date(student.birthDate).getMonth();
-        let numbOfMonth = monthes[studentMonth];
+        let numbOfMonth = months[studentMonth];
         // final.numbOfMonth = student.name; // присвоюю в не той ключ ім"я
     });
 
