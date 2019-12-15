@@ -1,4 +1,4 @@
-export const getDayOfWeek = (date, days) => {
+export const dayOfWeek = (date, days) => {
     const weekDays = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'St', 'Su'];
     const day = new Date(date).getDate();
     const futureDate = new Date(date).setDate(day + days);
