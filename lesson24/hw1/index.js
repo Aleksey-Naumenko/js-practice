@@ -1,5 +1,5 @@
 export const getDiff = (startDate, endDate) => {
-    let timeStamp = new Date(startDate) - new Date(endDate);
+    let timeStamp = new Date(endDate) - new Date(startDate);
 
     let permRest;
     let diff = [];
