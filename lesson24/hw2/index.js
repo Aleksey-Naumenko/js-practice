@@ -3,8 +3,10 @@ export function studentsBirthDays(students) {
 
     let final = {};
 
-    let [...studentsArray] = students
-        .sort((a, b) => a.birthDate.split('/')[1] - b.birthDate.split('/')[1])
+    let [...studentsArray] = students;
+    
+    studentsArray
+        .sort((a, b) => new Date(a.birthDate) - new Date(b.birthDate))
 
         .forEach(student => {
         let studentMonth = new Date(student.birthDate).getMonth();
