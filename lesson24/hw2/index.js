@@ -2,11 +2,20 @@ export function studentsBirthDays(students) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
     let final = {};
+    // console.log(sortByDay);
 
-    students.forEach(student => {
+    let arrOfStudents = students
+        .sort((a, b) => a.birthDate.split('/')[1] - b.birthDate.split('/')[1])
+        
+        .forEach(student => {
         let studentMonth = new Date(student.birthDate).getMonth();
         let numbOfMonth = months[studentMonth];
-        // final.numbOfMonth = student.name; // присвоюю в не той ключ ім"я
+
+        if (final.hasOwnProperty(numbOfMonth)) {
+            final[numbOfMonth].push(student.name);
+        } else {
+            final[numbOfMonth] = [student.name];
+        }  
     });
 
     return final;
