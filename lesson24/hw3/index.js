@@ -1,14 +1,10 @@
 const tasks = [
-    // { text: 'Buy milk', done: false, dateCreated: new Date(), id: getRandomId()},
-    // { text: 'Pick up Tom from airport', done: false, dateCreated: new Date(), id: getRandomId()},
-    // { text: 'Visit party', done: false, dateCreated: new Date(), id: getRandomId()},
-    // { text: 'Visit doctor', done: true, dateCreated: new Date(), id: getRandomId()},
-    // { text: 'Buy meat', done: true, dateCreated: new Date(), id: getRandomId()},
+    { text: 'Buy milk', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
+    { text: 'Pick up Tom from airport', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
+    { text: 'Visit party', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
+    { text: 'Visit doctor', done: true, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
+    { text: 'Buy meat', done: true, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
 ];
-
-function getRandomId() {
-	return Math.floor(Math.random() * 10000);
-}
 
 const renderListItems = listItems => {
     const list = document.querySelector('.list');
@@ -17,7 +13,7 @@ const renderListItems = listItems => {
     const listElements = listItems
         .sort((a, b) => b.dateCreated - a.dateCreated)
         .sort((a, b) => a.done - b.done)
-        .map( ({ text, done, id = getRandomId() }) => {
+        .map( ({ text, done, id = Math.floor(Math.random() * 10000) }) => {
             const listElement = document.createElement('li');
             listElement.classList.add('list__item');
             if (done) {
@@ -57,7 +53,7 @@ const addNewTask = () => {
     const input = document.querySelector('.task-input');
 
     if (!input.value) return;
-    tasks.unshift( {text: `${input.value}`, done: false, dateCreated: new Date(), id: getRandomId() });
+    tasks.unshift( {text: `${input.value}`, done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000) });
     input.value = '';
 
     renderListItems(tasks);
