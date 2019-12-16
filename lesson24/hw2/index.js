@@ -2,9 +2,8 @@ export function studentsBirthDays(students) {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
     let final = {};
-    // console.log(sortByDay);
 
-    let arrOfStudents = students
+    let [...studentsArray] = students
         .sort((a, b) => a.birthDate.split('/')[1] - b.birthDate.split('/')[1])
 
         .forEach(student => {
