@@ -1,9 +1,9 @@
 const tasks = [
-    { text: 'Buy milk', done: false, dateCreated: new Date(), id: getRandomId()},
-    { text: 'Pick up Tom from airport', done: false, dateCreated: new Date(), id: getRandomId()},
-    { text: 'Visit party', done: false, dateCreated: new Date(), id: getRandomId()},
-    { text: 'Visit doctor', done: true, dateCreated: new Date(), id: getRandomId()},
-    { text: 'Buy meat', done: true, dateCreated: new Date(), id: getRandomId()},
+    // { text: 'Buy milk', done: false, dateCreated: new Date(), id: getRandomId()},
+    // { text: 'Pick up Tom from airport', done: false, dateCreated: new Date(), id: getRandomId()},
+    // { text: 'Visit party', done: false, dateCreated: new Date(), id: getRandomId()},
+    // { text: 'Visit doctor', done: true, dateCreated: new Date(), id: getRandomId()},
+    // { text: 'Buy meat', done: true, dateCreated: new Date(), id: getRandomId()},
 ];
 
 function getRandomId() {
