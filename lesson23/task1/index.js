@@ -42,11 +42,20 @@ passwordInput.addEventListener('input', onPasswordChange);
 
 const loginForm = document.querySelector('.login-form');
 
+// const onFormSubmit = event => {
+//     event.preventDefault();
+//     const formData = [...new FormData(loginForm)]
+//         .reduce((acc, [field, value]) => ( {...acc, [field]: value} ), {});
+//     console.log(formData)
+//     alert (JSON.stringify(formData));
+// };
+
 const onFormSubmit = event => {
     event.preventDefault();
-    const formData = [...new FormData(loginForm)]
-        .reduce((acc, [field, value]) => ( {...acc, [field]: value} ), {});
-    alert (JSON.stringify(formData));
+    let dataObj = {};
+    const formData = [...new FormData(loginForm)];
+    formData.map(item => dataObj[item[0]] = item[1] );
+    alert(JSON.stringify(dataObj));
 };
 
 loginForm.addEventListener('submit', onFormSubmit);
