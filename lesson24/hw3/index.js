@@ -1,9 +1,9 @@
 const tasks = [
-    { text: 'Buy milk', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
-    { text: 'Pick up Tom from airport', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
-    { text: 'Visit party', done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
-    { text: 'Visit doctor', done: true, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
-    { text: 'Buy meat', done: true, dateCreated: new Date(), id: Math.floor(Math.random() * 10000)},
+    { text: 'Buy milk', done: false, dateCreated: new Date('01.15.2019'), id: Math.floor(Math.random() * 10000), dateDone: null},
+    { text: 'Pick up Tom from airport', done: false, dateCreated: new Date('01.29.2019'), id: Math.floor(Math.random() * 10000), dateDone: null},
+    { text: 'Visit party', done: false, dateCreated: new Date('03.18.2019'), id: Math.floor(Math.random() * 10000), dateDone: null},
+    { text: 'Visit doctor', done: true, dateCreated: new Date('02.11.2019'), id: Math.floor(Math.random() * 10000), dateDone: new Date('02.25.2019')},
+    { text: 'Buy meat', done: true, dateCreated: new Date('02.25.2019'), id: Math.floor(Math.random() * 10000), dateDone: new Date('03.05.2019')}
 ];
 
 const renderListItems = listItems => {
@@ -12,6 +12,7 @@ const renderListItems = listItems => {
 
     const listElements = listItems
         .sort((a, b) => b.dateCreated - a.dateCreated)
+        .sort((a, b) => b.dateDone - a.dateDone)
         .sort((a, b) => a.done - b.done)
         .map( ({ text, done, id = Math.floor(Math.random() * 10000) }) => {
             const listElement = document.createElement('li');
@@ -28,7 +29,7 @@ const renderListItems = listItems => {
 
             return listElement;
         });
-
+        
         list.append(...listElements);
 }
 renderListItems(tasks);
@@ -42,6 +43,11 @@ const updateTasksList = event => {
 
         const taskData = tasks.find(task => task.id == event.target.dataset.id);
         Object.assign(taskData, { done: event.target.checked });
+        if (taskData.dateDone == null) {
+            taskData.dateDone = new Date();
+        } else {
+            taskData.dateDone = null;
+        }
 
         renderListItems(tasks);
 }
@@ -53,7 +59,7 @@ const addNewTask = () => {
     const input = document.querySelector('.task-input');
 
     if (!input.value) return;
-    tasks.unshift( {text: `${input.value}`, done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000) });
+    tasks.unshift( {text: `${input.value}`, done: false, dateCreated: new Date(), id: Math.floor(Math.random() * 10000), dateDone: null });
     input.value = '';
 
     renderListItems(tasks);
