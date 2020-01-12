@@ -3,7 +3,7 @@
         .reduce((acc, [key, value]) => {
             let newValue;
             try {
-                newValue = JSON.stringify(value);
+                newValue = JSON.parse(value);
             } catch (e) {
                 newValue = value;
             }
