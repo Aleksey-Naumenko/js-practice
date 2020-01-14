@@ -1,6 +1,10 @@
 import { getItem } from './storage.js';
 export { renderTasksList };
 
+document.addEventListener('DOMContentLoaded', () => {
+    renderTasksList();
+});
+
 const renderTasksList = () => {
     const list = document.querySelector('.list');
     list.innerHTML = '';

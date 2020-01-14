@@ -13,10 +13,6 @@ const setItem = (key, value) => {
 const getItem = (key) => JSON.parse(localStorage.getItem(key));
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderTasksList();
-});
-
 function onStorageChange(event) {
     if (event.key === 'tasks') {
         renderTasksList();
