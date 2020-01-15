@@ -6,12 +6,12 @@ export const culc = value  => {
             result += number;
             return this;
         },
-        mult(number) {
-            result *= number;
-            return this;
-        },
         subtract(number) {
             result -= number;
+            return this;
+        },
+        mult(number) {
+            result *= number;
             return this;
         },
         div(number) {
