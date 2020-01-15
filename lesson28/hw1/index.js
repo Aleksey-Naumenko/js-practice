@@ -21,7 +21,7 @@ export const shmoment = date => {
             if (name == 'hours') newDate = new Date(newDate.setHours(newDate.getHours() - value));
             if (name == 'minutes') newDate = new Date(newDate.setMinutes(newDate.getMinutes() - value));
             if (name == 'seconds') newDate = new Date(newDate.setSeconds(newDate.getSeconds() - value));
-            if (name == 'milliseconds') nnewDate = new Date(newDate.setMilliseconds(newDate.getMilliseconds() - value));
+            if (name == 'milliseconds') newDate = new Date(newDate.setMilliseconds(newDate.getMilliseconds() - value));
             return this;
         },
         result() {
