@@ -1,4 +1,4 @@
-export const culc = value  => {
+const calc = value  => {
     let result = value ;
 
     const calculator = {
@@ -24,3 +24,7 @@ export const culc = value  => {
     };
     return calculator;
 }
+
+let res = calc(3).add(2).mult(4).div(10).subtract(5).result(); // -3
+
+console.log(res);
