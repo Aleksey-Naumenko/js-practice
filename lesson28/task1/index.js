@@ -1,26 +1,26 @@
-export const culc = num => {
-    let result = num;
+export const culc = value  => {
+    let result = value ;
 
     const calculator = {
-        add(value) {
-            result += value;
+        add(number) {
+            result += number;
             return this;
         },
-        mult(value) {
-            result *= value;
+        mult(number) {
+            result *= number;
             return this;
         },
-        subtract(value) {
-            result -= value;
+        subtract(number) {
+            result -= number;
             return this;
         },
-        div(value) {
-            result /= value;
+        div(number) {
+            result /= number;
             return this;
         },
         result() {
             return result;
-        }
-    }
+        },
+    };
     return calculator;
 }
