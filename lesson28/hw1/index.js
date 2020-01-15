@@ -1,5 +1,5 @@
 export const shmoment = date => {
-    const newDate = new Date(date);
+    let newDate = new Date(date);
 
     const dataObj = {
         add(name, value) {
