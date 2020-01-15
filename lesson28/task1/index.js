@@ -1,4 +1,4 @@
-const culc = num => {
+export const culc = num => {
     let result = num;
 
     const calculator = {
