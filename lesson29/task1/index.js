@@ -1,7 +1,7 @@
-export function addImage(src, callback) {
+export const addImage = (url, callback) {
     const pageElem = document.querySelector('.page');
     const imgElem = document.createElement('img');
-    imgElem.src = src;
+    imgElem.src = url;
     imgElem.setAttribute('alt', 'My photo');
     pageElem.append(imgElem);
 
