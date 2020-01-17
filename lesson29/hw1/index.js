@@ -1,14 +1,13 @@
 function randomDelay() {
-    return Math.ceil(Math.random() * 3);
+    return Math.ceil(Math.random() * 3) * 1000;
 }
 
 export function requestUserData(userId, callback) {
-    let delay = randomDelay();
 
-    if (userId == 'broken') {
-        callback(null, 'Failed to load user data');
-    } else {
-        setTimeout(() => {
+    setTimeout(() => {
+        if (userId == 'broken') {
+            callback(null, 'Failed to load user data');
+        } else {
             callback(
                 {
                     name: 'John',
@@ -17,8 +16,8 @@ export function requestUserData(userId, callback) {
                     email: `${userId}@example.com`,
                 }
             );
-        }, delay);
-    }
+        }
+    }, randomDelay());
 }
 
 function requestCallBack(user, error) {
@@ -29,5 +28,5 @@ function requestCallBack(user, error) {
     return user;
 }
 
-console.log(requestUserData('id007', requestCallBack));
+console.log(requestUserData('agent007', requestCallBack));
 // console.log(randomDelay());
