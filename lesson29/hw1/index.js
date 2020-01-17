@@ -8,7 +8,14 @@ export function requestUserData(userId, callback) {
         callback(null, 'Failed to load user data');
     } else {
         setTimeout(() => {
-            console.log(callback(userId));
+            callback(
+                {
+                    name: 'John',
+                    age: 17,
+                    userId: userId,
+                    email: `${userId}@example.com`,
+                }
+            );
         }, randomDelay());
     }
 }
@@ -18,12 +25,7 @@ function requestCallBack(userId, error) {
         console.log(error);
         return;
     }
-    return {
-        name: 'John',
-        age: 17,
-        userId: userId,
-        email: `${userId}@example.com`,
-    }
+    return user;
 }
 
 console.log(requestUserData('id007', requestCallBack));
