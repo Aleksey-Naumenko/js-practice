@@ -4,19 +4,21 @@ const objContext = {
 }
 
 
-function greeting(id) {
-    console.log(`Hello!
+function greetingCallback(id, sister) {
+    console.log(`
+        Hello!
         My name is ${this.name}!
         I'm ${this.age} years old!
-        My ID is ${id}`);
+        My ID is ${id}.
+        And my sister is ${sister}.
+        `);
 }
 
 
 export function delay(delay, callback, context, ...args) {
     setTimeout(() => {
-        const fnCallBack = callback.bind(context, ...args);
-        fnCallBack();
-    }, delay * 1000);
+        callback.bind(context, ...args)();
+    }, delay);
 }
 
-// delay(3, greeting, objContext, '123');
+delay(1000, greetingCallback, objContext, '123', 'Molly');
