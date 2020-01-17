@@ -6,6 +6,17 @@ export const addImage = (url, callback) => {
     pageElem.append(imgElem);
 
 
+    const onImageLoaded = (error, data) => {
+
+        if (error) {
+            console.log(error);
+            return;
+        }
+        const { width, height } = data;
+        const sizeElem = document.querySelector('.image-size');
+        sizeElem.textContent = `${width} x ${height}`
+    }
+
     const onImageLoaded = () => {
         callback(null, { width: 200, height: 100 });
     }
@@ -16,19 +27,8 @@ export const addImage = (url, callback) => {
 
     imgElem.addEventListener('load', onImageLoaded);
     imgElem.addEventListener('error', onErrorAppear);
+
+
 }
 
-
-
-const onImageLoaded = (error, data) => {
-
-    if (error) {
-        console.log(error);
-        return;
-    }
-    const { width, height } = data;
-    const sizeElem = document.querySelector('.image-size');
-    sizeElem.textContent = `${width} x ${height}`
-}
-
-addImage('https://server.com/image.png', onImageLoaded);
+// addImage('https://server.com/image.png', onImageLoaded);
