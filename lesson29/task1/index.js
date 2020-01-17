@@ -7,15 +7,11 @@ export function addImage(src, callback) {
 
 
     const onImageLoaded = () => {
-        // const { width, height } = imgElem;
         callback(null, { width: 200, height: 100 });
     }
 
     const onErrorLoad = () => {
-        if (error) {
-            console.log('Image load failed');
-            return;
-        }
+            callback('Image load failed');
     }
     imgElem.addEventListener('load', onImageLoaded);
     imgElem.addEventListener('error', onErrorLoad);
@@ -23,14 +19,14 @@ export function addImage(src, callback) {
 
 
 
-// const onImageLoaded = (error, data) => {
-//     if (error) {
-//         console.log(error);
-//         return;
-//     }
-//     const { width, height } = data;
-//     const sizeElem = document.querySelector('.image-size');
-//     sizeElem.textContent = `${width} x ${height}`
-// }
+const onImageLoaded = (error, data) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    const { width, height } = data;
+    const sizeElem = document.querySelector('.image-size');
+    sizeElem.textContent = `${width} x ${height}`
+}
 
-// addImage(src, onImageLoaded);
+addImage(src, onImageLoaded);
