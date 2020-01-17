@@ -3,6 +3,7 @@ function randomDelay() {
 }
 
 export function requestUserData(userId, callback) {
+    let delay = randomDelay();
 
     if (userId == 'broken') {
         callback(null, 'Failed to load user data');
@@ -16,7 +17,7 @@ export function requestUserData(userId, callback) {
                     email: `${userId}@example.com`,
                 }
             );
-        }, randomDelay());
+        }, delay);
     }
 }
 
