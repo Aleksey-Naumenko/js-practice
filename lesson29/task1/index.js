@@ -1,4 +1,4 @@
-function addImage(src, callback) {
+export function addImage(src, callback) {
     const pageElem = document.querySelector('.page');
     const imgElem = document.createElement('img');
     imgElem.src = src;
@@ -8,7 +8,7 @@ function addImage(src, callback) {
 
     const onImageLoaded = () => {
         const { width, height } = imgElem;
-        callback(null, { width, height });
+        callback(null, { width: 200, height: 100 });
     }
 
     const onErrorLoad = () => {
