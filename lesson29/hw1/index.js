@@ -21,7 +21,7 @@ export function requestUserData(userId, callback) {
     }
 }
 
-function requestCallBack(userId, error) {
+function requestCallBack(user, error) {
     if (error) {
         console.log(error);
         return;
