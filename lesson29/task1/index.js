@@ -13,7 +13,7 @@ export function addImage(src, callback) {
 
     const onErrorLoad = () => {
         if (error) {
-            callback('Image load failed');
+            console.log('Image load failed');
             return;
         }
     }
