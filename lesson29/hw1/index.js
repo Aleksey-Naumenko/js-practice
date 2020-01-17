@@ -2,7 +2,7 @@ function randomDelay() {
     return Math.ceil(Math.random() * 3);
 }
 
-function requestUserData(userId, callback) {
+export function requestUserData(userId, callback) {
 
     if (userId == 'broken') {
         callback(null, 'Failed to load user data');
