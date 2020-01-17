@@ -1,4 +1,4 @@
-function addImage(src, callback) {
+export function addImage(src, callback) {
     const pageElem = document.querySelector('.page');
     const imgElem = document.createElement('img');
     imgElem.src = src;
@@ -13,7 +13,7 @@ function addImage(src, callback) {
     const onErrorAppear = () => {
             callback('Image load failed');
     }
-    
+
     imgElem.addEventListener('load', onImageLoaded);
     imgElem.addEventListener('error', onErrorAppear);
 }
