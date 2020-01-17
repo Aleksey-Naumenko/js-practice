@@ -1,4 +1,4 @@
-const addImage = (url, callback) => {
+export const addImage = (url, callback) => {
     const pageElem = document.querySelector('.page');
     const imgElem = document.createElement('img');
     imgElem.src = url;
@@ -26,9 +26,6 @@ const onImageLoaded = (error, data) => {
         console.log(error);
         return;
     }
-    const { width, height } = data;
-    const sizeElem = document.querySelector('.image-size');
-    sizeElem.textContent = `${width} x ${height}`
 }
 
 addImage('https://server.com/image.png', onImageLoaded);
