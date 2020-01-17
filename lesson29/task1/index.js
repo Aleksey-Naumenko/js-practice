@@ -1,4 +1,4 @@
-export function addImage(src, callback) {
+function addImage(src, callback) {
     const pageElem = document.querySelector('.page');
     const imgElem = document.createElement('img');
     imgElem.src = src;
@@ -10,16 +10,18 @@ export function addImage(src, callback) {
         callback(null, { width: 200, height: 100 });
     }
 
-    const onErrorLoad = () => {
+    const onErrorAppear = () => {
             callback('Image load failed');
     }
+    
     imgElem.addEventListener('load', onImageLoaded);
-    imgElem.addEventListener('error', onErrorLoad);
+    imgElem.addEventListener('error', onErrorAppear);
 }
 
 
 
 const onImageLoaded = (error, data) => {
+
     if (error) {
         console.log(error);
         return;
@@ -29,4 +31,4 @@ const onImageLoaded = (error, data) => {
     sizeElem.textContent = `${width} x ${height}`
 }
 
-addImage(src, onImageLoaded);
+addImage('https://server.com/image.png', onImageLoaded);
