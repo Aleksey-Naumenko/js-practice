@@ -8,15 +8,16 @@ export const addImage = (url, callback) => {
     console.log(imgElem);
 
 
-    const onImageLoaded = () => {
+    const onImageLoad = () => {
         callback(null, { width: 200, height: 100 });
+        console.log('Must work');
     }
 
     const onErrorAppear = () => {
             callback('Image load failed');
     }
 
-    imgElem.addEventListener('load', onImageLoaded);
+    imgElem.addEventListener('load', onImageLoad);
     imgElem.addEventListener('error', onErrorAppear);
 }
 
@@ -28,4 +29,4 @@ const onImageLoaded = (error, data) => {
     }
 }
 
-addImage('https://server.com/image.png', onImageLoaded);
+addImage('https://klike.net/uploads/posts/2019-01/1547367999_1.jp', onImageLoaded);
