@@ -6,7 +6,7 @@ export const addImage = (url, callback) => {
     pageElem.append(imgElem);
 
     const onImageLoad = () => {
-        callback(null, { width: 200, height: 100 });
+        onErrorAppear(null, { width: 200, height: 100 });
     }
 
     const onErrorAppear = (error) => {
