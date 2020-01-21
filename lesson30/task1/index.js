@@ -14,7 +14,7 @@ export const addImage = url => {
         }
         
         imgElem.addEventListener('load', onImageLoad);
-        imgElem.addEventListener('error', () => reject(new Error('Image load failed')));
+        imgElem.addEventListener('error', () => reject('Image load failed'));
     });
 }
 
