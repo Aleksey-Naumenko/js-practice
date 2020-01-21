@@ -3,7 +3,7 @@ export const requestUserData = userId => {
     return new Promise((resolve, reject) => {
         if (userId == 'broken') {
             setTimeout(() => {
-                reject(new Error('You are broken'));
+                reject(new Error('User not found'));
             }, 500);
         } else {
             setTimeout(() => {
