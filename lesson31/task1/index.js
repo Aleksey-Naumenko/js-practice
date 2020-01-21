@@ -3,7 +3,7 @@ export const requestUserData = userId => {
     return new Promise((resolve, reject) => {
         if (userId == 'broken') {
             setTimeout(() => {
-                reject();
+                reject(new Error('You are broken'));
             }, 500);
         } else {
             setTimeout(() => {
@@ -13,4 +13,4 @@ export const requestUserData = userId => {
     });
 }
 
-console.log(requestUserData('userId-1111'));
+// console.log(requestUserData('broken'));
