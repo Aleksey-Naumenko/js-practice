@@ -9,7 +9,7 @@ export const addImage = url => {
         pageElem.append(imgElem);
         
         const onImageLoad = () => {
-            const { width: 200, height: 100 } = imgElem;
+            const { width, height } = imgElem;
             resolve({ width, height });
         }
         
