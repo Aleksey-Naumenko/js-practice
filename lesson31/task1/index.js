@@ -13,4 +13,7 @@ export const requestUserData = userId => {
     });
 }
 
+requestUserData('broken')
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
 // console.log(requestUserData('broken'));
