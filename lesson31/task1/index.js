@@ -7,10 +7,10 @@ export const requestUserData = userId => {
             }, 500);
         } else {
             setTimeout(() => {
-                resolve(() => {
-                   return { name: 'John', age: 17, userId: userId, email: `${userId}@example.com` };
-                });
+                resolve( { name: 'John', age: 17, userId: userId, email: `${userId}@example.com` } );
             }, 1000);
         }
     });
 }
+
+console.log(requestUserData('userId-1111'));
