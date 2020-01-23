@@ -17,7 +17,7 @@ const renderUserData = data => {
     const { avatar_url, name, location } = data;
     userAvatarElem.src = avatar_url;
     userNameElem.textContent = name;
-    userLocationElem.textContent = location ? `From ${location}` : '';
+    userLocationElem.textContent = location ? `from ${location}` : '';
 
 }
 
