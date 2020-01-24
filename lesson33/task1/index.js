@@ -11,6 +11,7 @@ const userNameInputElem = document.querySelector('.name-form__input');
 const fetchUserData = (userName) => {
     return fetch(`https://api.github.com/users/${userName}`)
         .then(response => response.json());
+        // .then(body => console.log(body));
 }
 
 const renderUserData = data => {
