@@ -17,7 +17,7 @@ const userDataHandler = () => {
 }
 
 
-const getMostActiveDevs = ( {userId, repoId, days} ) => {
+export const getMostActiveDevs = ( {userId, repoId, days} ) => {
   
     const dateToStartFrom = new Date(new Date().setDate(new Date().getDate() - days));
 
