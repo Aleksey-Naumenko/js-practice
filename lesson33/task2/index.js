@@ -13,12 +13,13 @@ const userDataHandler = () => {
     const userId = userIdInputElem.value;
     const repoId = repoIdInputElem.value;
     const days = daysInputElem.value;
-    return getMostActiveDevs( {userId, repoId, days} );
+    return getMostActiveDevs({ userId, repoId, days });
 }
+showUserBtnElem.addEventListener('click', userDataHandler);
 
 
-export const getMostActiveDevs = ( {userId, repoId, days} ) => {
-  
+export const getMostActiveDevs = ({ userId, repoId, days }) => {
+    console.log('lol');
     const dateToStartFrom = new Date(new Date().setDate(new Date().getDate() - days));
 
     const mostActiveUsers = fetch(`https://api.github.com/repos/${userId}/${repoId}/commits?per_page=100`)
@@ -47,11 +48,11 @@ export const getMostActiveDevs = ( {userId, repoId, days} ) => {
                         theBiggestCount = user[1].count;
                         newObj = user[1];
                     }
-                    });
+                });
 
             return [newObj];
         })
-        // console.log(mostActiveUsers);
+    console.log(mostActiveUsers);
     return mostActiveUsers;
 };
 
@@ -59,7 +60,7 @@ export const getMostActiveDevs = ( {userId, repoId, days} ) => {
 
 
 const fetchUserData = userId => fetch(`https://api.github.com/users/${userId}`)
-        .then(response => response.json());
+    .then(response => response.json());
 
 const onSearchUserAvatar = () => {
     const userId = userIdInputElem.value;
@@ -68,7 +69,6 @@ const onSearchUserAvatar = () => {
 };
 
 const renderUserData = data => {
-    console.log(data);
     const { avatar_url, login } = data;
     userAvatarElem.src = avatar_url;
     userNameElem.textContent = login;
