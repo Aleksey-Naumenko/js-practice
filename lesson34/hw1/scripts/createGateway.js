@@ -28,15 +28,18 @@ const onSendData = (e) => {
     e.preventDefault();
 
     const dataObj = [...new FormData(userFormElem)]
-        .reduce((acc, [key, value]) => ({ ...acc, [key]: value }, {}));
+        .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
 
     saveNewUser(dataObj)
         .then(response => {
-            alert(response.json());
             userEmailElem.value = '';
             userNameElem.value = '';
-            userPasswordElem.value = '';        
+            userPasswordElem.value = ''; 
+            // console.log(response.json());
+            // alert(response.json()); 
+            return response.json();
         })
+        .then(users => alert(JSON.stringify(users)))
         .catch(() => {
             errorFieldElem.textContent = 'Failed to create user';
         });
