@@ -8,7 +8,7 @@ import {
 export { onSendData, userFormElem };
 
 const userFormElem = document.querySelector('.login-form');
-const baseUrl = 'https://crudcrud.com/api/20947a09a0f74506bb172c629f872bba/users';
+const baseUrl = 'ttps://crudcrud.com/api/20947a09a0f74506bb172c629f872bba/users';
 
 
 
@@ -35,8 +35,6 @@ const onSendData = (e) => {
             userEmailElem.value = '';
             userNameElem.value = '';
             userPasswordElem.value = ''; 
-            // console.log(response.json());
-            // alert(response.json()); 
             return response.json();
         })
         .then(users => alert(JSON.stringify(users)))
