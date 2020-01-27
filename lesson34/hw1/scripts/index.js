@@ -24,6 +24,7 @@ const reportValidity = () => {
         submitBtnElem.setAttribute('disabled', 'disabled');
     } else {
         submitBtnElem.removeAttribute('disabled');
+        submitBtnElem.setAttribute('enabled', 'enabled');
     }
 
     errorFieldElem.textContent = '';

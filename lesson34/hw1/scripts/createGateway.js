@@ -8,7 +8,7 @@ import {
 export { onSendData, userFormElem };
 
 const userFormElem = document.querySelector('.login-form');
-const baseUrl = 'ttps://crudcrud.com/api/20947a09a0f74506bb172c629f872bba/users';
+const baseUrl = 'https://crudcrud.com/api/20947a09a0f74506bb172c629f872bba/users';
 
 
 
@@ -31,13 +31,12 @@ const onSendData = (e) => {
         .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
 
     saveNewUser(dataObj)
-        .then(response => {
-            userEmailElem.value = '';
-            userNameElem.value = '';
-            userPasswordElem.value = ''; 
-            return response.json();
+        .then(response => response.json())
+        .then(data => {
+            alert(JSON.stringify(data));
+            userFormElem.reset();
+            // clearForm();
         })
-        .then(users => alert(JSON.stringify(users)))
         .catch(() => {
             errorFieldElem.textContent = 'Failed to create user';
         });
