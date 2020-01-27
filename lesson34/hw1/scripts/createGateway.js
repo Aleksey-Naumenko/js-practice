@@ -2,6 +2,7 @@ import {
     userEmailElem,
     userNameElem,
     userPasswordElem,
+    submitBtnElem,
     errorFieldElem
 } from './index.js';
 
@@ -40,6 +41,8 @@ const onSendData = (e) => {
         .catch(() => {
             errorFieldElem.textContent = 'Failed to create user';
         });
+
+    submitBtnElem.setAttribute('disabled', 'disabled');
 }
 
 

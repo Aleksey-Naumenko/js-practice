@@ -4,6 +4,7 @@ export {
     userNameElem,
     userEmailElem,
     userPasswordElem,
+    submitBtnElem,
     errorFieldElem
 };
 
