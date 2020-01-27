@@ -18,8 +18,8 @@ const errorFieldElem = document.querySelector('.error-text');
 const reportValidity = () => {
 
     if (!userEmailElem.value.includes('@') ||
-        userNameElem.value.length < 3 ||
-        !userPasswordElem.value.includes(5)) {   // pay attention to this condition if you wanna pass
+        userNameElem.value.length < 1 ||
+        userPasswordElem.value.length < 1) {
 
         submitBtnElem.setAttribute('disabled', 'disabled');
     } else {
