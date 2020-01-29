@@ -7,7 +7,7 @@ export const fetchUser = async userId => {
         const userData = await userObj.json();
         return userData;
     } catch (e) {
-        throw new Error('Can\'t get User data');
+        throw new Error('Failed to fetch user');
     }
 }
 
